@@ -81,12 +81,12 @@ export const nota = (puntos) => {
 // Devuelve true si el texto contiene el carácter "@".
 // Ejemplos: tieneArroba("a@b.com") -> true,  tieneArroba("hola") -> false
 export const tieneArroba = (email) => {
-  // const mail = email.find ((mail) => mail === "@")
-//   if(){
-//     return true
-//   }else{
-//     return false
-//   }
+  // const mail 
+  // if(mail = mail){
+  //   return true
+  // }else{
+  //   return false
+  // }
 };
 // console.log(tieneArroba("a@b.com"))
 
@@ -98,7 +98,6 @@ export const cuentaPares = (numeros) => {
     numero % 2 === 0).length
 };
 
-console.log(cuentaPares([1, 3, ]))
 
 // 9 · sumaArray(numeros)
 // Recibe un array de números y devuelve la suma de todos.
@@ -116,5 +115,5 @@ export const sumaArray = (numeros) => {
 // Un array vacío devuelve true (ninguno incumple la regla).
 // Ejemplos: todosPositivos([1, 2, 3]) -> true,  todosPositivos([1, -2, 3]) -> false
 export const todosPositivos = (numeros) => {
-  // TODO
+  return numeros.every((numero) => numero >= 1)
 };
