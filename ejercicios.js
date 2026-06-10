@@ -94,11 +94,11 @@ export const tieneArroba = (email) => {
 // Recibe un array de números y devuelve CUÁNTOS son pares.
 // Ejemplos: cuentaPares([1, 2, 3, 4]) -> 2,  cuentaPares([1, 3, 5]) -> 0
 export const cuentaPares = (numeros) => {
-  return numeros.find((numero) =>
-    numero % 2 === 0)
+  return numeros.filter((numero) =>
+    numero % 2 === 0).length
 };
 
-// console.log(cuentaPares([1, 2, 4, 6]))
+console.log(cuentaPares([1, 3, ]))
 
 // 9 · sumaArray(numeros)
 // Recibe un array de números y devuelve la suma de todos.
@@ -110,8 +110,6 @@ export const sumaArray = (numeros) => {
     acc + numero, initialValue
   )
 };
-
-console.log(sumaArray([1,2,6]))
 
 // 10 · todosPositivos(numeros)
 // Devuelve true si TODOS los números del array son positivos (mayores que 0).
