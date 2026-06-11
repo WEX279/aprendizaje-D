@@ -10,8 +10,9 @@
 // Devuelve "nombre apellido" (con un espacio en medio).
 // Ejemplo: nombreCompleto({ nombre: "Ada", apellido: "Lovelace" }) -> "Ada Lovelace"
 export const nombreCompleto = (persona) => {
-  // TODO
+  return persona.nombre + " "+ persona.apellido
 };
+
 
 // 2 · esMayorDeEdad(persona)
 // persona es como { nombre: "Ana", edad: 18 }.
@@ -19,7 +20,11 @@ export const nombreCompleto = (persona) => {
 // Ejemplos: esMayorDeEdad({ nombre: "Ana", edad: 18 }) -> true
 //           esMayorDeEdad({ nombre: "Leo", edad: 17 }) -> false
 export const esMayorDeEdad = (persona) => {
-  // TODO
+  if (persona.edad >= 18){
+    return true
+  }else{
+    return false
+  }
 };
 
 // 3 · presentacion(persona)
@@ -27,7 +32,7 @@ export const esMayorDeEdad = (persona) => {
 // Devuelve EXACTAMENTE el texto: "Hola, soy Ada y tengo 36 años"
 // Ejemplo: presentacion({ nombre: "Leo", edad: 10 }) -> "Hola, soy Leo y tengo 10 años"
 export const presentacion = (persona) => {
-  // TODO
+  return `Hola, soy ${persona.nombre} y tengo ${persona.edad} años`
 };
 
 // 4 · disponible(producto)
@@ -36,7 +41,11 @@ export const presentacion = (persona) => {
 // Ejemplos: disponible({ activo: true, stock: 5 }) -> true
 //           disponible({ activo: true, stock: 0 }) -> false
 export const disponible = (producto) => {
-  // TODO
+  if(producto.activo === true && producto.stock >= 1){
+    return true
+  } else{
+    return false
+  }
 };
 
 // 5 · precioRebajado(producto)
@@ -45,7 +54,11 @@ export const disponible = (producto) => {
 // Ejemplos: precioRebajado({ precio: 100, oferta: true }) -> 90
 //           precioRebajado({ precio: 100, oferta: false }) -> 100
 export const precioRebajado = (producto) => {
-  // TODO
+  if (producto.oferta === true){
+    return producto.precio - 10
+  }else{
+    return producto.precio
+  }
 };
 
 // 6 · nombres(personas)
@@ -53,7 +66,7 @@ export const precioRebajado = (producto) => {
 // Devuelve un array con SOLO los nombres.
 // Ejemplo: nombres([{ nombre: "Ada" }, { nombre: "Leo" }]) -> ["Ada", "Leo"]
 export const nombres = (personas) => {
-  // TODO
+  return personas.map((persona)=> persona.nombre)
 };
 
 // 7 · mayoresDeEdad(personas)
@@ -62,7 +75,7 @@ export const nombres = (personas) => {
 // Ejemplo: mayoresDeEdad([{ nombre: "Ada", edad: 30 }, { nombre: "Leo", edad: 15 }])
 //          -> [{ nombre: "Ada", edad: 30 }]
 export const mayoresDeEdad = (personas) => {
-  // TODO
+  return personas.filter((persona) => persona.edad>=18)
 };
 
 // 8 · buscarPorId(productos, id)
@@ -70,21 +83,29 @@ export const mayoresDeEdad = (personas) => {
 // Devuelve el primer producto cuyo id coincida. Si no hay ninguno, devuelve undefined.
 // Ejemplo: buscarPorId([{ id: 1 }, { id: 2 }], 2) -> { id: 2 }
 export const buscarPorId = (productos, id) => {
-  // TODO
+  return productos.find((producto)=> producto.id === id)
 };
+
 
 // 9 · totalCarrito(productos)
 // productos es un array de objetos como [{ precio: 10 }, { precio: 20 }].
 // Devuelve la suma de todos los precios. Un carrito vacío suma 0.
 // Ejemplo: totalCarrito([{ precio: 10 }, { precio: 20 }, { precio: 5 }]) -> 35
 export const totalCarrito = (productos) => {
-  // TODO
+  const initialValue = 0
+    return productos
+    .map((producto)=> producto.precio)
+    .reduce((acc, precio)=> acc + precio, initialValue)
 };
+console.log(totalCarrito([{ precio: 10 }, { precio: 20 }, { precio: 5 }]))
 
 // 10 · nombresEnOferta(productos)
 // productos es un array como [{ nombre: "A", oferta: true }, { nombre: "B", oferta: false }].
 // Devuelve un array con los nombres SOLO de los que están en oferta.
 // Ejemplo: nombresEnOferta([{ nombre: "A", oferta: true }, { nombre: "B", oferta: false }]) -> ["A"]
 export const nombresEnOferta = (productos) => {
-  // TODO
+  return productos
+  .filter((producto)=> producto.oferta)
+  .map((producto)=> producto.nombre)
 };
+
