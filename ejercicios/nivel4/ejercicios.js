@@ -10,8 +10,11 @@
 // Devuelve un array con los nombres SOLO de los usuarios activos.
 // Ejemplo: nombresActivos([{ nombre: "Ana", activo: true }, { nombre: "Leo", activo: false }]) -> ["Ana"]
 export const nombresActivos = (usuarios) => {
-  // TODO
+  return usuarios
+  .filter((activos)=> activos.activo === true)
+  .map((usuario)=> usuario.nombre)
 };
+
 
 // 2 · ordenarPorEdad(usuarios)
 // Devuelve un array con los usuarios ordenados de MENOR a MAYOR edad.
