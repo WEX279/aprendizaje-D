@@ -1,0 +1,110 @@
+// Diagnóstico de lógica JS · Nivel 2
+//
+// Implementa cada función para que su test pase (verde).
+// Hazlas en orden, de la 1 a la 10. Si una se te atasca del todo, déjala
+// vacía y pasa a la siguiente.
+//
+// Lee el README.md antes de empezar.
+
+// 1 · esPar(n)
+// Devuelve true si el número es par; si no, false.
+// Pista: un número es par si el resto de dividirlo entre 2 es 0  ->  n % 2
+// Ejemplos: esPar(4) -> true,  esPar(7) -> false
+export const esPar = (n) => {
+  if( n % 2 === 0){
+    return true
+  } else{
+    return false
+  }
+};
+
+// 2 · puedeVotar(edad, esCiudadano)
+// Recibe DOS datos. Devuelve true solo si la edad es 18 o más Y además es ciudadano.
+// Ejemplos: puedeVotar(18, true) -> true,  puedeVotar(18, false) -> false,  puedeVotar(17, true) -> false
+export const puedeVotar = (edad, esCiudadano) => {
+  if (edad >= 18 && esCiudadano === true){
+    return true
+  }else{
+    return false
+  }
+};
+
+// 3 · esFinDeSemana(dia)
+// Recibe el nombre de un día en minúsculas. Devuelve true si es "sábado" o "domingo".
+// Ejemplos: esFinDeSemana("sábado") -> true,  esFinDeSemana("lunes") -> false
+export const esFinDeSemana = (dia) => {
+  if (dia === "sábado" || dia === "domingo"){
+    return true
+  }else{
+    return false
+  }
+
+};
+
+// 4 · nombreValido(nombre)
+// Devuelve true si el nombre tiene entre 3 y 15 caracteres, ambos incluidos.
+// Ejemplos: nombreValido("ana") -> true,  nombreValido("al") -> false
+export const nombreValido = (nombre) => {
+  if (nombre.length >= 3 && nombre.length <= 15){
+    return true
+  } else{
+    return false
+  }
+};
+
+// 5 · precioEnvio(total)
+// Devuelve el coste de envío: 0 si el total es 50 o más (envío gratis), y 5 si es menos.
+// Ejemplos: precioEnvio(50) -> 0,  precioEnvio(49) -> 5
+export const precioEnvio = (total) => {
+  if(total >= 50){
+    return 0
+  }else{
+    return 5
+  }
+};
+
+// 6 · totalCarrito(precio, cantidad)
+// Calcula precio * cantidad (el subtotal) y devuelve el total a pagar:
+//   si el subtotal es 50 o más  -> el subtotal tal cual (envío gratis)
+//   si es menos                 -> el subtotal + 5 de envío
+// Ejemplos: totalCarrito(20, 2) -> 45,  totalCarrito(20, 3) -> 60
+export const totalCarrito = (precio, cantidad) => {
+  const subtotal = precio * cantidad
+    
+  if(subtotal >= 50){
+    return subtotal
+  }else if(subtotal<50){
+    return subtotal + 5
+  }
+};
+// console.log(totalCarrito(20, 2))
+
+// 7 · inicialMayuscula(palabra)
+// Devuelve la palabra con la primera letra en mayúscula y el resto igual.
+// Pista: la primera letra es palabra[0]; el resto es palabra.slice(1)
+// Ejemplos: inicialMayuscula("ada") -> "Ada",  inicialMayuscula("juan") -> "Juan"
+export const inicialMayuscula = (palabra) => {
+  return palabra[0].toUpperCase() + palabra.slice(1)
+};
+
+// 8 · soloPares(numeros)
+// Recibe un array de números y devuelve un ARRAY NUEVO solo con los pares.
+// Ejemplos: soloPares([1, 2, 3, 4]) -> [2, 4],  soloPares([1, 3, 5]) -> []
+export const soloPares = (numeros) => {
+  return numeros.filter((numero)=> numero %2 === 0)
+};
+console.log(soloPares([1, 2, 3]))
+// 9 · dobles(numeros)
+// Recibe un array de números y devuelve un ARRAY NUEVO con cada número multiplicado por 2.
+// Ejemplos: dobles([1, 2, 3]) -> [2, 4, 6],  dobles([]) -> []
+export const dobles = (numeros) => {
+  return numeros.map((numero)=> numero * 2)
+};
+
+// 10 · cuentaAprobados(notas)
+// Recibe un array de notas (0 a 10) y devuelve CUÁNTAS son 5 o más.
+// Ejemplos: cuentaAprobados([4, 5, 6, 9, 2]) -> 3,  cuentaAprobados([1, 2, 3]) -> 0
+export const cuentaAprobados = (notas) => {
+  return notas.filter((nota)=> nota >= 5).length
+};
+
