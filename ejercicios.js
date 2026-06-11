@@ -81,14 +81,10 @@ export const nota = (puntos) => {
 // Devuelve true si el texto contiene el carácter "@".
 // Ejemplos: tieneArroba("a@b.com") -> true,  tieneArroba("hola") -> false
 export const tieneArroba = (email) => {
-  // const mail 
-  // if(mail = mail){
-  //   return true
-  // }else{
-  //   return false
-  // }
+  return email.includes("@")
+  
 };
-// console.log(tieneArroba("a@b.com"))
+console.log(tieneArroba("a@b.com"))
 
 // 8 · cuentaPares(numeros)
 // Recibe un array de números y devuelve CUÁNTOS son pares.
