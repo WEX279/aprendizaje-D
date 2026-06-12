@@ -72,8 +72,13 @@ export const hayMenores = (usuarios) => {
 // Devuelve la suma de los precios SOLO de los productos en oferta.
 // Ejemplo: totalEnOferta([{ precio: 10, oferta: true }, { precio: 20, oferta: false }, { precio: 5, oferta: true }]) -> 15
 export const totalEnOferta = (productos) => {
-  // TODO
+  const initialValue = 0
+  return productos
+  .filter((producto)=> producto.oferta === true)
+  .reduce((acc, producto)=> acc + producto.precio, initialValue )
 };
+
+console.log(totalEnOferta([{ precio: 10, oferta: true }, { precio: 20, oferta: false }, { precio: 5, oferta: true }]))
 
 // 8 · subirPrecios(productos, cantidad)
 // Devuelve un array NUEVO de productos, cada uno con su precio sumado en 'cantidad'.
