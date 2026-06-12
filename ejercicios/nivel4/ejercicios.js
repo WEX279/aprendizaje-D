@@ -31,7 +31,10 @@ export const ordenarPorEdad = (usuarios) => {
 // Ejemplo: nombresActivosOrdenados([{ nombre: "Sara", activo: true }, { nombre: "Ana", activo: true }])
 //          -> ["Ana", "Sara"]
 export const nombresActivosOrdenados = (usuarios) => {
-  // TODO
+  return usuarios
+    .filter((usuario)=> usuario.activo === true)
+    .map((nombre)=> nombre.nombre)
+    .sort()
 };
 
 // 4 · usuarioMasJoven(usuarios)
