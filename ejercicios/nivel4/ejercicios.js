@@ -57,13 +57,15 @@ export const precioMaximo = (productos) => {
   
 };
 
-console.log(precioMaximo([{ precio: 10 }, { precio: 30 }, { precio: 20 }]))
-
 // 6 · hayMenores(usuarios)
 // Devuelve true si AL MENOS UN usuario es menor de edad (edad menor que 18).
 // Ejemplo: hayMenores([{ edad: 30 }, { edad: 15 }]) -> true,  hayMenores([{ edad: 30 }]) -> false
 export const hayMenores = (usuarios) => {
-  // TODO
+  if(usuarios.find((menor)=> menor.edad < 18)){
+    return true
+  } else{
+    return false
+  }
 };
 
 // 7 · totalEnOferta(productos)
