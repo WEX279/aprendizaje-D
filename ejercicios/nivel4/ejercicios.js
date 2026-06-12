@@ -42,9 +42,16 @@ export const nombresActivosOrdenados = (usuarios) => {
 // Ejemplo: usuarioMasJoven([{ nombre: "Ana", edad: 30 }, { nombre: "Leo", edad: 18 }])
 //          -> { nombre: "Leo", edad: 18 }
 export const usuarioMasJoven = (usuarios) => {
-  // TODO
+  return usuarios
+  .sort((a,b )=> a.edad - b.edad)
+  .find((menor)=>menor)
 };
 
+console.log(usuarioMasJoven([
+        { nombre: "Ana", edad: 30 },
+        { nombre: "Leo", edad: 18 },
+        { nombre: "Sara", edad: 25 },
+      ]))
 // 5 · precioMaximo(productos)
 // Devuelve el precio más alto de todos los productos. (Siempre hay al menos uno.)
 // Pista: Math.max(...listaDeNumeros)
