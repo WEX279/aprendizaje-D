@@ -47,18 +47,17 @@ export const usuarioMasJoven = (usuarios) => {
   .find((menor)=>menor)
 };
 
-console.log(usuarioMasJoven([
-        { nombre: "Ana", edad: 30 },
-        { nombre: "Leo", edad: 18 },
-        { nombre: "Sara", edad: 25 },
-      ]))
 // 5 · precioMaximo(productos)
 // Devuelve el precio más alto de todos los productos. (Siempre hay al menos uno.)
 // Pista: Math.max(...listaDeNumeros)
 // Ejemplo: precioMaximo([{ precio: 10 }, { precio: 30 }, { precio: 20 }]) -> 30
 export const precioMaximo = (productos) => {
-  // TODO
+  const producto = productos.map((precio)=>precio.precio)
+  return Math.max(...producto)
+  
 };
+
+console.log(precioMaximo([{ precio: 10 }, { precio: 30 }, { precio: 20 }]))
 
 // 6 · hayMenores(usuarios)
 // Devuelve true si AL MENOS UN usuario es menor de edad (edad menor que 18).
