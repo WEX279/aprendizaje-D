@@ -1,8 +1,8 @@
-// Diagnóstico de lógica JS · Nivel 3 (objetos y arrays de objetos)
 //
 // Implementa cada función para que su test pase (verde).
 // Hazlas en orden, de la 1 a la 10. Si una se te atasca, déjala vacía y sigue.
 //
+// Diagnóstico de lógica JS · Nivel 3 (objetos y arrays de objetos)
 // Lee el README.md antes de empezar (ahí está cómo acceder a un objeto).
 
 // 1 · nombreCompleto(persona)

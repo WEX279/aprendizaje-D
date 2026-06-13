@@ -78,8 +78,6 @@ export const totalEnOferta = (productos) => {
   .reduce((acc, producto)=> acc + producto.precio, initialValue )
 };
 
-console.log(totalEnOferta([{ precio: 10, oferta: true }, { precio: 20, oferta: false }, { precio: 5, oferta: true }]))
-
 // 8 · subirPrecios(productos, cantidad)
 // Devuelve un array NUEVO de productos, cada uno con su precio sumado en 'cantidad'.
 // Pista: para copiar un objeto cambiando un campo -> { ...producto, precio: nuevoPrecio }
@@ -87,6 +85,8 @@ console.log(totalEnOferta([{ precio: 10, oferta: true }, { precio: 20, oferta: f
 export const subirPrecios = (productos, cantidad) => {
   // TODO
 };
+console.log(subirPrecios([{ nombre: "A", precio: 10 }]))
+
 
 // 9 · cuentaPorCategoria(productos)
 // Devuelve un OBJETO que cuenta cuántos productos hay de cada categoría.
